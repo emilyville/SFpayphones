@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+# heroku id is shielded-coast-8367.git
 
 group :development, :test do
 	gem 'sqlite3'
@@ -25,6 +26,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'twilio-ruby'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

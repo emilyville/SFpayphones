@@ -1,6 +1,8 @@
 Payphones::Application.routes.draw do
   resources :users
-
+  match 'hello_world' => 'hello_world#index'
+  match 'callthemall' => 'call_them_all#incoming_sms'
+  match 'phone_number' => 'phone_number#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
