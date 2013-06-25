@@ -5,6 +5,8 @@ Payphones::Application.routes.draw do
   match 'phone_number' => 'phone_number#index'
   match 'phone_number/clear' => 'phone_number#clear'
 
+  match 'callthemall/call' => 'call_them_all#call'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
