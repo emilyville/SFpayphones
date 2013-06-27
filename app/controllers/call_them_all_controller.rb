@@ -39,7 +39,7 @@ class CallThemAllController < ApplicationController
 		if (newqueue.current_size > 0)
 			#connect to someone in queue
 			response = Twilio::TwiML::Response.new do |r|
-				r.Dial = Twilio::TwiML::Dial.new do |d|
+				r.Dial do |d|
   					d.Queue 'newqueue'
   				end
   			end
