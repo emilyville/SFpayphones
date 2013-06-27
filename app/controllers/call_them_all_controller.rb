@@ -22,7 +22,7 @@ class CallThemAllController < ApplicationController
 		phone_numbers = PhoneNumber.all
 		#call phone numbers
 		client = Twilio::REST::Client.new(ENV["ACCOUNT_SID"], ENV["AUTH_TOKEN"])
-		client.account.queues.create(:friendly_name => "newqueue")
+		# client.account.queues.create(:friendly_name => "newqueue")
 		phone_numbers.each do |number|
 			client.account.calls.create(
 				:From => '+14155086687',
@@ -38,8 +38,18 @@ class CallThemAllController < ApplicationController
 		newqueue = client.account.queues.list.first
 		if (newqueue.current_size > 0)
 			#connect to someone in queue
+			response = Twilio::TwiML::Response.new do |r|
+				r.Dial = Twilio::TwiML::Dial.new do |d|
+  					d.Queue 'newqueue'
+  				end
+  			end
+ 			render :xml => response.text
 		else
 			#add to qeue
+			response = Twilio::TwiML::Response.new do |r|
+				r.Enqueue 'newqueue'
+			end	
+			render :xml => response.text
 		end
 	end
 end
