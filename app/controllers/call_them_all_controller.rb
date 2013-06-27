@@ -27,7 +27,7 @@ class CallThemAllController < ApplicationController
 			client.account.calls.create(
 				:From => '+14155086687',
 				:To => number.number,
-				:Url => 'http://twimlets.com/holdmusic?Bucket=com.twilio.music.rock'
+				:Url => 'http://shielded-coast-8367.herokuapp.com/callthemall/queue'
 				)
 		end
 		render :nothing => true

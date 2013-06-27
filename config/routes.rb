@@ -7,6 +7,8 @@ Payphones::Application.routes.draw do
 
   match 'callthemall/call' => 'call_them_all#call'
 
+  match 'callthemall/queue' => 'call_them_all#queue'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
