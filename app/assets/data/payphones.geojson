@@ -2973,8 +2973,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					-122.414703,
-					37.806913
+					-122.414735,
+					37.806929
 				]
 			},
 			"properties": {
@@ -2985,8 +2985,8 @@
 				"address": "400 N POINT ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "37.806913",
-				"long": "-122.414703",
+				"lat": "37.806929",
+				"long": "-122.414735",
 				"rowNumber": 130,
 				"hexcolor": "#0077C7"
 			}
@@ -3019,8 +3019,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					-122.414703,
-					37.806913
+					-122.414735,
+					37.806929
 				]
 			},
 			"properties": {
@@ -3031,8 +3031,8 @@
 				"address": "400 N POINT ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "37.806913",
-				"long": "-122.414703",
+				"lat": "37.806929",
+				"long": "-122.414735",
 				"rowNumber": 132,
 				"hexcolor": "#0077C7"
 			}
@@ -4077,8 +4077,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					-122.414703,
-					37.806913
+					-122.414735,
+					37.806929
 				]
 			},
 			"properties": {
@@ -4089,8 +4089,8 @@
 				"address": "400 N POINT ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "37.806913",
-				"long": "-122.414703",
+				"lat": "37.806929",
+				"long": "-122.414735",
 				"rowNumber": 178,
 				"hexcolor": "#0077C7"
 			}
@@ -4307,8 +4307,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					-122.414703,
-					37.806913
+					-122.414735,
+					37.806929
 				]
 			},
 			"properties": {
@@ -4319,8 +4319,8 @@
 				"address": "400 N POINT ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "37.806913",
-				"long": "-122.414703",
+				"lat": "37.806929",
+				"long": "-122.414735",
 				"rowNumber": 188,
 				"hexcolor": "#0077C7"
 			}
@@ -8976,8 +8976,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					121.765735,
-					36.760693
+					-122.419716,
+					37.775334
 				]
 			},
 			"properties": {
@@ -8988,8 +8988,8 @@
 				"address": "9 OAK ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "36.760693",
-				"long": "121.765735",
+				"lat": "37.775334",
+				"long": "-122.419716",
 				"rowNumber": 391,
 				"hexcolor": "#0077C7"
 			}
@@ -15094,8 +15094,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					-121.765735,
-					36.760693
+					-122.41965,
+					37.790378
 				]
 			},
 			"properties": {
@@ -15106,8 +15106,8 @@
 				"address": "1541 California ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "36.760693",
-				"long": "-121.765735",
+				"lat": "37.790378",
+				"long": "-122.41965",
 				"rowNumber": 657,
 				"hexcolor": "#0077C7"
 			}
@@ -15301,8 +15301,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					-122.333422,
-					37.931818
+					-122.414735,
+					37.806929
 				]
 			},
 			"properties": {
@@ -15313,8 +15313,8 @@
 				"address": "400 N POINT ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "37.931818",
-				"long": "-122.333422",
+				"lat": "37.806929",
+				"long": "-122.414735",
 				"rowNumber": 666,
 				"hexcolor": "#0077C7"
 			}
@@ -16750,8 +16750,8 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					-122.414703,
-					37.806913
+					-122.414735,
+					37.806929
 				]
 			},
 			"properties": {
@@ -16762,8 +16762,8 @@
 				"address": "400 N POINT ST",
 				"city": "San Francisco",
 				"state": "CA",
-				"lat": "37.806913",
-				"long": "-122.414703",
+				"lat": "37.806929",
+				"long": "-122.414735",
 				"rowNumber": 729,
 				"hexcolor": "#0077C7"
 			}
