@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row">
+
+		<!-- two columns on either side since there is such little content -->
+		<div class="span2">
+		</div>
+	<div class="span8">
+		<div class="page-header">
+			<h1>Public Service</h1>
+			<p>tagline</p>
+		</div>
+
+		<div id="container-nav">
+	      	<ul class="nav nav-tabs">
+			  <li><a href="#numbers" data-toggle="tab">numbers</a></li>
+			  <li><a href="#connections" data-toggle="tab">connections</a></li>
+			  <li><a href="#map" data-toggle="tab">map</a></li>
+			</ul>
+		</div>
+
+		<div class="tab-content main-container">
+			<div class="tab-pane active" id="numbers">
+				numbers
+		        <%= render :partial => "phone_numbers" %>
+			</div>
+			<div class="tab-pane" id="connections">
+				connections
+			</div>
+			<div class="tab-pane" id="map">
+				map
+				<%= render :partial => "map" %>
+			</div>
+		</div>
+
+
+      	<p>
+ 			<%= link_to "call", callthemall_call_path, :class=>"btn btn-large btn-primary", :remote=> true %>
+ 			<%= link_to "clear", phone_number_clear_path, :remote => true %>
+      	</p>
+
+      </div>
+    </div>
+
+    <!-- two columns on either side since there is such little content -->
+    <div class="span2">
+    </div>    
+  </div>
+</div>
