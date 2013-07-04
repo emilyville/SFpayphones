@@ -6,15 +6,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.418701,
-					37.739433
+					37.739433,
+					122.418701
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.739433",
-				"long": "122.418701",
+				"long": "37.739433",
+				"lat": "122.418701",
 				"rowNumber": 1,
 				"hexcolor": "#0077C7"
 			}
@@ -24,15 +24,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.388429,
-					37.758003
+					37.758003,
+					122.388429
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.758003",
-				"long": "122.388429",
+				"long": "37.758003",
+				"lat": "122.388429",
 				"rowNumber": 2,
 				"hexcolor": "#0077C7"
 			}
@@ -42,15 +42,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.456174,
-					37.780881
+					37.780881,
+					122.456174
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.780881",
-				"long": "122.456174",
+				"long": "37.780881",
+				"lat": "122.456174",
 				"rowNumber": 3,
 				"hexcolor": "#0077C7"
 			}
@@ -60,15 +60,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.484178,
-					37.781944
+					37.781944,
+					122.484178
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.781944",
-				"long": "122.484178",
+				"long": "37.781944",
+				"lat": "122.484178",
 				"rowNumber": 4,
 				"hexcolor": "#0077C7"
 			}
@@ -78,15 +78,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.429185,
-					37.72852
+					37.72852,
+					122.429185
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.72852",
-				"long": "122.429185",
+				"long": "37.72852",
+				"lat": "122.429185",
 				"rowNumber": 5,
 				"hexcolor": "#0077C7"
 			}
@@ -96,15 +96,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.449767,
-					37.7167
+					37.7167,
+					122.449767
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.7167",
-				"long": "122.449767",
+				"long": "37.7167",
+				"lat": "122.449767",
 				"rowNumber": 6,
 				"hexcolor": "#0077C7"
 			}
@@ -114,15 +114,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.427997,
-					37.737152
+					37.737152,
+					122.427997
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.737152",
-				"long": "122.427997",
+				"long": "37.737152",
+				"lat": "122.427997",
 				"rowNumber": 7,
 				"hexcolor": "#0077C7"
 			}
@@ -132,15 +132,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.480435,
-					37.714236
+					37.714236,
+					122.480435
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.714236",
-				"long": "122.480435",
+				"long": "37.714236",
+				"lat": "122.480435",
 				"rowNumber": 8,
 				"hexcolor": "#0077C7"
 			}
@@ -150,15 +150,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.454257,
-					37.723315
+					37.723315,
+					122.454257
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.723315",
-				"long": "122.454257",
+				"long": "37.723315",
+				"lat": "122.454257",
 				"rowNumber": 9,
 				"hexcolor": "#0077C7"
 			}
@@ -168,15 +168,15 @@
 			"geometry": {
 				"type": "Point",
 				"coordinates": [
-					122.454257,
-					37.723315
+					37.723315,
+					122.454257
 				]
 			},
 			"properties": {
 				"marker-size": "small",
 				"marker-color": "#0077C7",
-				"lat": "37.723315",
-				"long": "122.454257",
+				"long": "37.723315",
+				"lat": "122.454257",
 				"rowNumber": 10,
 				"hexcolor": "#0077C7"
 			}
