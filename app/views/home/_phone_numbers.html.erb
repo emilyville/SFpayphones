@@ -1,5 +1,22 @@
-  	<div class ="numbers-view">
-		<% @phone_numbers.each do |number| %>
-		<%= number.number %>
-		<% end %>
-  	</div>
+
+<h3> But how? </h3>
+<ol>
+	<li>Input phone numbers.
+		<p> Text 415-508-6687 to add phone numbers. The numbers are displayed here.</p>
+		<div class ="numbers-view">
+			<% @phone_numbers.each do |number| %>
+			<%= number.number %>
+			<% end %>
+		</div>
+	</li>
+	<li>Call them all at once.
+		<p> Do it! Hit the call button.</p>
+		<p>
+			<%= link_to "call", callthemall_call_path, :class=>"btn btn-large btn-primary", :remote=> true %>
+			<%= link_to "clear", phone_number_clear_path, :remote => true %>
+  		</p>
+	</li>
+	<li>See what happens.
+	</li>
+
+</ol>

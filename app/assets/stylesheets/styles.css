@@ -1,7 +1,20 @@
 .main-container {
-	height: 200px;
 }
-
+.numbers-view {
+	height: 100px;
+}
 .page-header {
 	border-bottom: none;
+}
+.page-header {
+	border-bottom: none;
+	text-align: right;
+	padding-right: 20px;
+}
+
+.nav-stacked>li{
+	text-align: right;
+}
+.nav-tabs.nav-stacked>li>a {
+	border: 1px solid #ffffff;
 }
