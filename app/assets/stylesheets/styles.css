@@ -12,8 +12,8 @@ a:hover {
 	left: 20px;
 }
 #header-logo img {
-	width: 25%;
 	vertical-align: top;
+	margin-top: 18px;
 }
 
 #header-logo h1 {
@@ -41,23 +41,26 @@ a:hover {
 
 
 li.active {
-	background-color: #F18D05;
+	background-color: #99CCCC;
 	border-radius: 0px 0px 0px 0px; 
 }	
 
 #left-column {
-	padding-right: -10px; 
+	background-color: #ffffff; 
+	z-index: 10000000;
 }
 .nav>li>a:hover, .nav>li>a:focus {
-	background-color: #FFD8A9;
+	background-color: #CAEAE9;
 }	
 li.active {
-	background-color: #F18D05;
+	background-color: #99CCCC;
 }
-.main-container {
+.demo {
+	margin-left: 20px;
+}
+.map {
 	position: absolute;
 	top: 0px;
 	bottom: 0px; 
-	overflow: hidden;
 	right: 0px;
 }
