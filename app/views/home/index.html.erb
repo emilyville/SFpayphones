@@ -12,8 +12,7 @@
 				<div class="row">
 					<div id="container-nav">
 				      	<ul class="nav nav-stacked">
-						  	<li><a href="#operator" data-toggle="tab">Operation Pay Phone</a></li>
-						  	<li><a href="#operator" data-toggle="tab">The data</a></li>
+						  	<li><a href="#operator" data-toggle="tab">Pay Phone</a></li>
 							<li><a href="#numbers" data-toggle="tab">Demo</a></li>
 						</ul>
 					</div>
@@ -24,12 +23,13 @@
 	<!-- main column -->	
 	<div class="span9">
 		<div class="tab-content main-container">
-			<div class="tab-pane active" id="numbers">
-		        <%= render :partial => "phone_numbers" %>
-			</div>
-			<div class="tab-pane" id="operator">
+			<div class="tab-pane active" id="operator">
 				<%= render :partial => "callbox" %>
 			</div>
+			<div class="tab-pane" id="numbers">
+		        <%= render :partial => "phone_numbers" %>
+			</div>
+
 		</div>
       </div>
     </div>

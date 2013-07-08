@@ -9,6 +9,11 @@ Payphones::Application.routes.draw do
 
   match 'callthemall/queue' => 'call_them_all#queue'
 
+  match 'json/payphones' => 'payphones#payphones'
+
+  match 'json/sanfrancisco' => 'payphones#sanfrancisco'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,2 +1,76 @@
-<h3> Operation Pay Phone </h3>
+<!-- <h3> Operation Pay Phone </h3>
 <script src="https://embed.github.com/view/geojson/emilyville/callbox/master/app/assets/data/payphones.geojson"></script>
+ -->
+<div class="map">
+</div>
+
+<script>
+
+var width = 960,
+    height = 1160;
+
+var svg = d3.select(".map").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+
+  var projection = d3.geo.albers() 
+    .translate([480, 250]) 
+    .scale(200000) 
+    .rotate([122.4183, 0]) 
+    .center([0, 37.7750]); 
+
+d3.json("json/sanfrancisco.json", function(error, sf) {
+  console.log(sf);
+  var neighborhoods = topojson.feature(sf, sf.objects.sanfrancisco);
+  console.log(neighborhoods);
+
+
+  var path = d3.geo.path().projection(projection);
+  svg.append("path")
+      .datum(neighborhoods)
+      .attr("d", path).attr("class", "land");
+
+  svg.append("path")
+      .datum(topojson.feature(sf, sf.objects.counties))
+      .attr("d", path)
+      .attr("class", "counties");
+
+});
+
+//payphones
+d3.json("json/payphones.json", function(error, payphones) {
+  console.log(payphones);
+
+  var path = d3.geo.path().projection(projection).pointRadius([2]);
+  svg.append("path")
+      .datum(payphones)
+      .attr("d", path).attr("class", "phone");
+ 
+ console.log(payphones['features'][0]);
+
+ringing();
+
+//make it ring
+function ringing() {
+      var c = payphones['features'][0];
+      svg.append("circle")
+          .attr("cx", projection(c.geometry.coordinates)[0])
+          .attr("cy", projection(c.geometry.coordinates)[1])
+          .attr("r", 1)
+          .style("fill", "red")
+          .style("fill-opacity", 0.5)
+          .style("stroke", "red")
+          .style("stroke-opacity", 0.5)
+        .transition()
+          .duration(2000)
+          .ease(Math.sqrt)
+          .attr("r", 20)
+          .style("fill-opacity", 1e-6)
+          .style("stroke-opacity", 1e-6)
+          .remove();
+        setTimeout(ringing, 2000);
+    }
+});
+
+</script>	

@@ -55,10 +55,9 @@ li.active {
 	background-color: #F18D05;
 }
 .main-container {
-	border-left: #F18D05 10px solid;
-	padding: 40px;
 	position: absolute;
 	top: 0px;
 	bottom: 0px; 
+	overflow: hidden;
+	right: 0px;
 }
-
