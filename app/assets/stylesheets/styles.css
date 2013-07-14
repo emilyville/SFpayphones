@@ -2,26 +2,23 @@ body {
 	font-family: 'Maven Pro', sans-serif;
 	color: #616161;
 }
+
+p, ol, ul, td {
+	font-size: 12px;	
+}
+
 a:hover {
 	color: #ffffff;
 }
 
-#header-logo{
-	position: relative;
-	top: 20px;
-	left: 20px;
-}
-#header-logo img {
-	vertical-align: top;
-	margin-top: 18px;
-}
-
 #header-logo h1 {
-	width: 60%;
 	display: inline-block;
 	font-weight: 900;
 	font-size: 40px;
 	line-height: 1.2;
+}
+.span2 {
+	margin-left: 0px;
 }
 
 #container-nav {
@@ -62,5 +59,5 @@ li.active {
 	position: absolute;
 	top: 0px;
 	bottom: 0px; 
-	right: 0px;
+	right: -60px;
 }

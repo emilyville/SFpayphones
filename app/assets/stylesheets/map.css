@@ -1,20 +1,20 @@
-.counties {
+/*.counties {
   fill: #99CCCC;
   fill-opacity: .2;
   stroke: #777;
-}
+}*/
 
 .land {
   fill: none;
   stroke: #777;
-  stroke-dasharray: 2,2;
+  stroke-dasharray: 3,1;
   stroke-linejoin: round;
 }
 
-.place-label {
+.place-label, .neighborhood-label {
   fill: #777;
   fill-opacity: .5;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: 100;
   text-anchor: middle;
 }
@@ -27,6 +27,3 @@
   text-anchor: middle;
 }
 
-.neighborhood-label {
-  font-size: 10px;
-}
