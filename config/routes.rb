@@ -1,17 +1,17 @@
 Payphones::Application.routes.draw do
-  resources :users
-  match 'hello_world' => 'hello_world#index'
-  match 'callthemall' => 'call_them_all#incoming_sms'
-  match 'phone_number' => 'phone_number#index'
-  match 'phone_number/clear' => 'phone_number#clear'
+  get 'hello_world' => 'hello_world#index'
+  get 'callthemall' => 'call_them_all#incoming_sms'
+  post 'callthemall' => 'call_them_all#incoming_sms'
+  get 'phone_number' => 'phone_number#index'
+  get 'phone_number/clear' => 'phone_number#clear'
 
-  match 'callthemall/call' => 'call_them_all#call'
+  get 'callthemall/call' => 'call_them_all#call'
 
-  match 'callthemall/queue' => 'call_them_all#queue'
+  get 'callthemall/queue' => 'call_them_all#queue'
 
-  match 'json/payphones' => 'payphones#payphones'
+  get 'json/payphones' => 'payphones#payphones'
 
-  match 'json/sanfrancisco' => 'payphones#sanfrancisco'
+  get 'json/sanfrancisco' => 'payphones#sanfrancisco'
 
 
   # The priority is based upon order of creation:
