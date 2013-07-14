@@ -16,38 +16,41 @@ var svg = d3.select(".map").append("svg")
 
   var projection = d3.geo.albers() 
     .translate([480, 250]) 
-    .scale(200000) 
+    .scale(300000) 
     .rotate([122.4183, 0]) 
     .center([0, 37.7750]); 
 
 d3.json("json/sanfrancisco.json", function(error, sf) {
   console.log(sf);
+  // console.log(sf.features[0].properties.neighborho)
   var neighborhoods = topojson.feature(sf, sf.objects.sanfrancisco);
   console.log(neighborhoods);
 
-
   var path = d3.geo.path().projection(projection);
   svg.append("path")
-      .datum(neighborhoods)
+  .datum(topojson.mesh(sf, sf.objects.sanfrancisco))
       .attr("d", path).attr("class", "land");
 
-  svg.append("path")
-      .datum(topojson.feature(sf, sf.objects.counties))
-      .attr("d", path)
-      .attr("class", "counties");
-
+  console.log(topojson.feature(sf, sf.objects.sanfrancisco).features);
+  svg.selectAll(".neighborhood-label")
+    .data(topojson.feature(sf, sf.objects.sanfrancisco).features)
+  .enter().append("text")
+    .attr("class", function(d) { return "neighborhood-label " + d.id; })
+    .attr("transform", function(d) { return "translate(" + path.centroid(d) + ")"; })
+    .attr("dy", ".25em")
+    .text(function(d) { return d.properties.name; });
 });
 
 //payphones
 d3.json("json/payphones.json", function(error, payphones) {
-  console.log(payphones);
+  // console.log(payphones);
 
   var path = d3.geo.path().projection(projection).pointRadius([2]);
   svg.append("path")
       .datum(payphones)
       .attr("d", path).attr("class", "phone");
  
- console.log(payphones['features'][0]);
+ // console.log(payphones['features'][0]);
 
 ringing();
 
