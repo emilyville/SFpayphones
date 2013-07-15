@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '1.9.3', engine: 'jruby', engine_version: '1.7.4'
 gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
@@ -7,7 +7,8 @@ gem 'rails', '4.0.0'
 # heroku id is shielded-coast-8367.git
 
 group :development, :test do
-	gem 'sqlite3'
+	gem 'jdbc-sqlite3'
+	gem 'activerecord-jdbcsqlite3-adapter'
 end
 group :production do
 	gem 'pg'
@@ -20,6 +21,7 @@ gem 'google-webfonts'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
+gem 'puma'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
