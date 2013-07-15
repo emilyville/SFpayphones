@@ -1,7 +1,12 @@
 <!-- <h3> Operation Pay Phone </h3>
 <script src="https://embed.github.com/view/geojson/emilyville/callbox/master/app/assets/data/payphones.geojson"></script>
  -->
-<div class="map">
+ <div id='map'></div>
+<script type='text/javascript'>
+var map = L.mapbox.map('map', 'emilyville.map-8m29rkxx');
+</script>
+
+<div class="mapd3">
 </div>
 
 <script>
@@ -9,7 +14,7 @@
 var width = 960,
     height = 1160;
 
-var svg = d3.select(".map").append("svg")
+var svg = d3.select(".mapd3").append("svg")
     .attr("width", width)
     .attr("height", height);
 

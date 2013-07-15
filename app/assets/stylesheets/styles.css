@@ -6,6 +6,11 @@ body {
 p, ol, ul, td {
 	font-size: 12px;	
 }
+#map {
+	z-index: 0;
+}
+
+
 
 a:hover {
 	color: #ffffff;
@@ -16,9 +21,6 @@ a:hover {
 	font-weight: 900;
 	font-size: 40px;
 	line-height: 1.2;
-}
-.span2 {
-	margin-left: 0px;
 }
 
 #container-nav {
@@ -43,8 +45,10 @@ li.active {
 }	
 
 #left-column {
-	background-color: #ffffff; 
+	background: rgba(255,255,255, .7); 
 	z-index: 10000000;
+	margin-left: 60px;
+
 }
 .nav>li>a:hover, .nav>li>a:focus {
 	background-color: #CAEAE9;
@@ -52,12 +56,11 @@ li.active {
 li.active {
 	background-color: #99CCCC;
 }
-.demo {
-	margin-left: 20px;
-}
-.map {
+
+.mapd3 {
 	position: absolute;
 	top: 0px;
 	bottom: 0px; 
 	right: -60px;
-}
+/*	background: url('map-bg.png');
+*/}
