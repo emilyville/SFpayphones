@@ -1,39 +1,92 @@
-<div class="container">
+<div id="allthethings">
 	<div class="row">
 		<div id="left-column">
-			<div class="span2">
+			<div class="span4">
 					<div class="row" id="header-logo">
-						<a href="/">
+<!-- 						<a href="/">
 							<img src="assets/openbooth.png"></img>
-						</a>
-						<h1>Open Booth</h1>
+						</a> -->
+						<h1>SF PayPhones</h1>
+					</div>
+					<div class="row">
+						<p> All the payphones in San Francisco, circa 2009. Call them to: find out which ones are still there, ask whoever answers about the weather, or just pretend you're on "The Americans". Also the ringing phones will light up on the map, since that's cool.
+						</p>
+						<p> <strong>Text the name of the neighborhood to 415-508-6687</strong>, you will be connected with all the payphones in that neighborhood. 
+						</p>
+						<div class="span2">
+							<ul>
+								<li>Bayview</li>
+								<li>Bernal Hill</li>
+								<li>Castro</li>
+								<li>Chinatown</li>
+								<li>Civic Center</li>
+								<li>Civic Center</li>
+								<li>Crocker Amazon</li>
+								<li>Excelsior</li>
+								<li>Financial District</li>
+								<li>Glen Park</li>
+								<li>Haight</li>
+								<li>Inner Richmond</li>
+								<li>Inner Sunset</li>
+								<li>Lakeshore</li>
+								<li>Marina</li>
+								<li>Mission</li>
+								<li>Neighborhood</li>
+								<li>Nob Hill</li>
+								<li>Noe Valley</li>
+							</ul>
+						</div>
+						<div class="span2">
+							<ul>
+								<li>North Beach</li>
+								<li>Ocean View</li>
+								<li>Outer Mission</li>
+								<li>Outer Richmond</li>
+								<li>Outer Sunset</li>
+								<li>Pacific Heights</li>
+								<li>Parkside</li>
+								<li>Potrero Hill</li>
+								<li>Presidio</li>
+								<li>Presidio Heights</li>
+								<li>Presido Heights</li>
+								<li>Russian Hill</li>
+								<li>Seacliff</li>
+								<li>SOMA</li>
+								<li>Tenderloin</li>
+								<li>Twin Peaks</li>
+								<li>Visitacion Valley</li>
+								<li>West of Twin Peaks</li>
+								<li>Western Addition</li>
+							</ul>						
+						</div>
+					</div>
+					<div class="row">
+						<p>See the masterlist <a href="https://docs.google.com/spreadsheet/pub?key=0AhXimdB90zwNdFk1dmlzbjNSclVkUmliQU4wU2hyOHc&output=html">here</a>.</p>
+						<p>Check out this project on github, <a href="https://github.com/emilyville/callbox">here</a>.</p>
 					</div>
 
-				<div class="row">
+
+				<!-- <div class="row">
 					<div id="container-nav">
 				      	<ul class="nav nav-stacked">
 						  	<li><a href="#operator" data-toggle="tab">Pay Phone</a></li>
-<!-- 							<li><a href="#numbers" data-toggle="tab">Demo</a></li>
- -->						</ul>
+ 							<li><a href="#numbers" data-toggle="tab">Demo</a></li>
+						</ul>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 
 	<!-- main column -->	
 	<div class="span9">
-		<div class="tab-content main-container">
-			<div class="tab-pane active" id="operator">
-				<%= render :partial => "callbox" %>
-			</div>
-			<div class="tab-pane" id="numbers">
-		        <%= render :partial => "phone_numbers" %>
-			</div>
-
+		<div class="main-container">
+			
+			<%= render :partial => "callbox" %>
+		
 		</div>
-      </div>
     </div>
 
    <!-- close row -->
   </div>
+</div>
 </div>

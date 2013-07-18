@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20130624055118) do
 
   create_table "phone_numbers", force: true do |t|
     t.string   "number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: true do |t|
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20130624055118) do
     t.string   "email"
     t.text     "address"
     t.boolean  "active"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
