@@ -13,6 +13,8 @@ Payphones::Application.routes.draw do
 
   get 'json/sanfrancisco' => 'payphones#sanfrancisco'
 
+  get 'livemap' => 'livemap#index'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -76,4 +76,10 @@ function ringing() {
     }
 });
 
+var source = new EventSource('/livemap');
+source.addEventListener('message', function(e) {
+  console.log("server sent:");
+  console.log(e);
+}, false);
+
 </script>	
