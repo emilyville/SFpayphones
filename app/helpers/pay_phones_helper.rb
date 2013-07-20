@@ -1,0 +1,2 @@
+module PayPhonesHelper
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @pay_phone.number %>
+</p>
+
+<p>
+  <strong>Neighborhood:</strong>
+  <%= @pay_phone.neighborhood %>
+</p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @pay_phone.lat %>
+</p>
+
+<p>
+  <strong>Lon:</strong>
+  <%= @pay_phone.lon %>
+</p>
+
+<%= link_to 'Edit', edit_pay_phone_path(@pay_phone) %> |
+<%= link_to 'Back', pay_phones_path %>

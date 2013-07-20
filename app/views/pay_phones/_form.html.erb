@@ -1,0 +1,33 @@
+<%= form_for(@pay_phone) do |f| %>
+  <% if @pay_phone.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pay_phone.errors.count, "error") %> prohibited this pay_phone from being saved:</h2>
+
+      <ul>
+      <% @pay_phone.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :neighborhood %><br>
+    <%= f.text_field :neighborhood %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br>
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :lon %><br>
+    <%= f.text_field :lon %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

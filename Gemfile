@@ -8,7 +8,7 @@ gem 'rails', '4.0.0'
 
 group :development, :test do
 	gem 'jdbc-sqlite3'
-	gem 'activerecord-jdbcsqlite3-adapter'
+	gem 'activerecord-jdbcsqlite3-adapter', '1.3.0.beta2'
 end
 group :production do
 	gem 'pg'

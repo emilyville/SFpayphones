@@ -1,4 +1,6 @@
 Payphones::Application.routes.draw do
+  resources :pay_phones
+
   get 'hello_world' => 'hello_world#index'
   get 'callthemall' => 'call_them_all#incoming_sms'
   post 'callthemall' => 'call_them_all#incoming_sms'

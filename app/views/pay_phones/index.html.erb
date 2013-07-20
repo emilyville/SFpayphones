@@ -1,0 +1,33 @@
+<h1>Listing pay_phones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Neighborhood</th>
+      <th>Lat</th>
+      <th>Lon</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pay_phones.each do |pay_phone| %>
+      <tr>
+        <td><%= pay_phone.number %></td>
+        <td><%= pay_phone.neighborhood %></td>
+        <td><%= pay_phone.lat %></td>
+        <td><%= pay_phone.lon %></td>
+        <td><%= link_to 'Show', pay_phone %></td>
+        <td><%= link_to 'Edit', edit_pay_phone_path(pay_phone) %></td>
+        <td><%= link_to 'Destroy', pay_phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pay phone', new_pay_phone_path %>
