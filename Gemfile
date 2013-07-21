@@ -11,7 +11,8 @@ group :development, :test do
 	gem 'activerecord-jdbcsqlite3-adapter', '1.3.0.beta2'
 end
 group :production do
-	gem 'pg'
+	gem 'jdbc-postgres'
+	gem 'activerecord-jdbcpostgresql-adapter', '1.3.0.beta2'
 end
 
 gem 'jquery-rails'
