@@ -17,6 +17,15 @@ Payphones::Application.routes.draw do
 
   get 'livemap' => 'livemap#index'
 
+  get 'callbox' => 'callbox#incoming_sms'
+  post 'callbox' => 'callbox#incoming_sms'
+
+  post 'callbox/connected' => 'callbox#call_connected'
+  post 'callbox/completed' => 'callbox#call_completed'
+  post 'callbox/caller/connected' => 'callbox#caller_connected'
+  post 'callbox/caller/completed' => 'callbox#caller_completed'
+  resources :pay_phones
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
