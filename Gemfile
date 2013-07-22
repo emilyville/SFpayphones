@@ -24,6 +24,7 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'puma'
 gem 'redis'
+gem 'foreman'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
