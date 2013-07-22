@@ -8,9 +8,8 @@ class LivemapController < ApplicationController
     	sse = Reloader::SSE.new(response.stream)
 
     	begin
-    		redis = Redis.new(:timeout => 0)
     		sse.write({ :message => 'starting messages' })
-  	 		redis.subscribe('callevents') do |on|          
+  	 		$redis.subscribe('callevents') do |on|          
     				on.message do |channel, msg|
     					sse.write({ :number => 'number'})
       			end
