@@ -25,6 +25,8 @@ gem 'uglifier'
 gem 'puma'
 gem 'redis'
 gem 'foreman'
+#static assets on heroku
+gem 'rails_12factor'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
