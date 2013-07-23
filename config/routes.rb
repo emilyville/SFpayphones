@@ -24,8 +24,6 @@ Payphones::Application.routes.draw do
   post 'callbox/completed' => 'callbox#call_completed'
   post 'callbox/caller/connected' => 'callbox#caller_connected'
   post 'callbox/caller/completed' => 'callbox#caller_completed'
-  resources :pay_phones
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
