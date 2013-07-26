@@ -52,7 +52,7 @@ class CallboxController < ApplicationController
 
 	def caller_connected
 		root_callsid = params[:CallSid]
-		pay_phones = $redis.hgetall "#{root_call.sid}-outgoing"
+		pay_phones = $redis.hgetall "#{root_callsid}-outgoing"
 		pay_phones.keys.each do |payphone|
 			begin
 				call = $twilio.account.calls.create(
@@ -61,7 +61,7 @@ class CallboxController < ApplicationController
 					:Url => url_for(controller: 'callbox', action: 'call_connected'),
 					:StatusCallback => url_for(controller: 'callbox', action: 'call_completed')
 					)
-				$redis.hset "#{root_call.sid}-outgoing", payphone.number, call.sid
+				$redis.hset "#{root_callsid}-outgoing", payphone.number, call.sid
 				$redis.set "#{call.sid}-root", root_callsid
 				$redis.hset "phonestatus", payphone, "ringing"
 				$redis.publish "callsupdated", JSON.dump({:status => "ringing"})
@@ -99,7 +99,7 @@ class CallboxController < ApplicationController
 	def caller_completed
 		call_sid = params[:CallSid]
 		#hangup all the calls
-		all_calls = $redis.hgetall "#{root_callsid}-outgoing"
+		all_calls = $redis.hgetall "#{call_sid}-outgoing"
 		hangup_calls all_calls.values
 		#lookup the queue sid
 		queue_sid = $redis.get "#{call_sid}-queue"
@@ -110,7 +110,7 @@ class CallboxController < ApplicationController
 			logger.debug "Failed to delete queue #{queue_sid}: #{e.message}"
 		end
 		#delete all the redis keys
-		$redis.del "#{callsid}-connected"
+		$redis.del "#{call_sid}-connected"
 	end
 
 	def call_connected
