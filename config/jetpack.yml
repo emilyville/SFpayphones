@@ -1,0 +1,11 @@
+jruby: "http://jruby.org.s3.amazonaws.com/downloads/1.7.4/jruby-complete-1.7.4.jar"
+jetty: "file:///usr/local/jetty-distribution-8.1.12.v20130726.zip"
+jruby-rack: "http://repository.codehaus.org/org/jruby/rack/jruby-rack/1.1.13.1/jruby-rack-1.1.13.1.jar"
+app_user: "callbox"
+app_root: "/usr/local/callbox/app"
+java_options: "-Xmx2048m"
+http_port: 4080
+max_concurrent_connections: 20
+ruby_version: 1.9.3
+app_type: rack
+

@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '1.9.3', engine: 'jruby', engine_version: '1.7.4'
 gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
@@ -15,6 +14,7 @@ group :production do
 	gem 'activerecord-jdbcpostgresql-adapter', '1.3.0.beta2'
 end
 
+gem 'jetpack'
 gem 'jquery-rails'
 gem 'twilio-ruby'
 gem 'figaro'
@@ -25,6 +25,7 @@ gem 'uglifier'
 gem 'puma'
 gem 'redis'
 gem 'foreman'
+gem 'therubyracer'
 #static assets on heroku
 gem 'rails_12factor'
 # To use ActiveModel has_secure_password
