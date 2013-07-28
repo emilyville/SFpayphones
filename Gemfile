@@ -25,7 +25,6 @@ gem 'uglifier'
 gem 'puma'
 gem 'redis'
 gem 'foreman'
-gem 'therubyracer'
 #static assets on heroku
 gem 'rails_12factor'
 # To use ActiveModel has_secure_password
