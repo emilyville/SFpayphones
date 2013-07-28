@@ -19,7 +19,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: jdbcpostgres
-  database: db/production.postgres
-  pool: 5
-  timeout: 5000
+  adapter: jdbcpostgresql
+  database: callbox_production
+  username: callbox
+  password: callbox
