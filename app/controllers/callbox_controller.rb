@@ -153,7 +153,12 @@ class CallboxController < ApplicationController
 
 	def call_completed
 		number = params[:To]
-		$redis.hdel "phonestatus", number
-		$redis.publish "callsupdated", JSON.dump({:status => "completed"})
+		begin
+			$redis.hdel "phonestatus", number
+			$redis.publish "callsupdated", JSON.dump({:status => "completed"})
+		rescue Exception => e
+			logger.info "error cleaning up call:#{number}, #{e.message}"
+		end
+		render :nothing => true
 	end
 end
