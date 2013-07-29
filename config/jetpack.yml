@@ -4,7 +4,8 @@ jruby-rack: "http://repository.codehaus.org/org/jruby/rack/jruby-rack/1.1.13.1/j
 app_user: "callbox"
 app_root: "/usr/local/callbox/app"
 java_options: "-Xmx2048m"
-http_port: 4080
+http_port: 8080
+#https_port: 443
 max_concurrent_connections: 20
 ruby_version: 1.9.3
 app_type: rack
