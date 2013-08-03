@@ -9,11 +9,22 @@ class LivemapController < ApplicationController
 
     	begin
     		sse.write({ :message => 'starting messages' })
-  	 		$redis.subscribe('callevents') do |on|          
-    				on.message do |channel, msg|
-    					sse.write({ :number => 'number'})
-      			end
-    		end
+  	 		# $redis.subscribe('callevents') do |on|          
+    		# 		on.message do |channel, msg|
+    		# 			sse.write({ :number => 'number'})
+      # 			end
+    		# end
+        while true do
+          calls = $redis.hgetall('phonestatus')
+          locations = $redis.hgetall('locations')
+          message = []
+          calls.each do |number, status|
+            location = JSON.parse(locations[number])
+            message << {'number': number, 'status': status, 'lat': location['lat'], 'lon': location['lon']}
+          end
+          sse.write message
+          sleep 2
+        end
   		rescue IOError
   			# error on client disconnect
   		ensure
