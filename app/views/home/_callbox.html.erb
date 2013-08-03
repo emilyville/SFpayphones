@@ -60,15 +60,19 @@ d3.json("json/payphones.json", function(error, payphones) {
 ringing();
 
 //make it ring
-function ringing() {
+function ringing(lat, lon, status) {
+      var color = "red";
+      if (status == 'connected') {
+        color = "green";
+      }
       var c = payphones['features'][0];
       svg.append("circle")
-          .attr("cx", projection(c.geometry.coordinates)[0])
-          .attr("cy", projection(c.geometry.coordinates)[1])
+          .attr("cx", projection(lat)
+          .attr("cy", projection(lon)
           .attr("r", 1)
           .style("fill", "red")
           .style("fill-opacity", 0.5)
-          .style("stroke", "red")
+          .style("stroke", color)
           .style("stroke-opacity", 0.5)
         .transition()
           .duration(2000)
@@ -85,6 +89,11 @@ var source = new EventSource('/livemap');
 source.addEventListener('message', function(e) {
   console.log("server sent:");
   console.log(e);
+  var data = JSON.parse(e.data);
+  $.each(data, function(i, phone) {
+    ringing(phone.lat, phone.lon, phone.status);
+  })
+
 }, false);
 
 </script>	

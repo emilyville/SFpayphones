@@ -42,6 +42,8 @@ class CallboxController < ApplicationController
 			$redis.multi do
 				pay_phones.each do |payphone|
 					$redis.hset "#{main_call.sid}-outgoing", payphone.number, ""
+					$redis.hset "locations" payphone.number JSON.dump({'lat': payphone.lat, 'lon': payphone.lon})
+
 				end
 			end
 		rescue Exception => e
@@ -65,9 +67,9 @@ class CallboxController < ApplicationController
 			rescue Exception => e
 				logger.info "Unable to initiate call to #{payphone}: #{e.message}"
 			end
-			$redis.hset "#{root_callsid}-outgoing", payphone, call.sid
+			$redis.hset "#{root_callsid}-outgoing", call.to, call.sid
 			$redis.set "#{call.sid}-root", root_callsid
-			$redis.hset "phonestatus", payphone, "ringing"
+			$redis.hsetnx "phonestatus", call.to, "ringing"
 			$redis.publish "callsupdated", JSON.dump({:status => "ringing"})
 		end
 		logger.info "adding caller to queue"
@@ -141,6 +143,8 @@ class CallboxController < ApplicationController
 		all_callsids = $redis.hgetall("#{root_callsid}-outgoing").values
 		all_callsids.delete call_sid
 		hangup_calls all_callsids
+		# change live status
+		$redis.hset "phonestatus", number, "connected"
 		logger.info "connecting to caller"
 		# create the response to connect to the waiting caller
 		response = Twilio::TwiML::Response.new do |r|
