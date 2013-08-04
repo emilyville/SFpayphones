@@ -8,7 +8,7 @@ class LivemapController < ApplicationController
     	sse = Reloader::SSE.new(response.stream)
 
     	begin
-    		sse.write({ :message => 'starting messages' })
+    	#	sse.write({ :message => 'starting messages' })
   	 		# $redis.subscribe('callevents') do |on|          
     		# 		on.message do |channel, msg|
     		# 			sse.write({ :number => 'number'})
@@ -19,8 +19,10 @@ class LivemapController < ApplicationController
           locations = $redis.hgetall('locations')
           message = []
           calls.each do |number, status|
-            location = JSON.parse(locations[number])
-            message << {'number': number, 'status': status, 'lat': location['lat'], 'lon': location['lon']}
+            if locations[number]
+              location = JSON.parse(locations[number])
+              message << {'number' => number, 'status' => status, 'lat' => location['lat'], 'lon' => location['lon']}
+            end
           end
           sse.write message
           sleep 2
