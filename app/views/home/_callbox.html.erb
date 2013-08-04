@@ -49,33 +49,63 @@ d3.json("json/payphones.json", function(error, payphones) {
  
  // console.log(payphones['features'][0]);
 
-ringing();
-
 //make it ring
-function ringing(lat, lon, status) {
-      var color = "red";
-      if (status == 'connected') {
-        color = "green";
-      }
-      var c = payphones['features'][0];
-      svg.append("circle")
-          .attr("cx", projection(lat)
-          .attr("cy", projection(lon)
-          .attr("r", 1)
-          .style("fill", "red")
-          .style("fill-opacity", 0.5)
-          .style("stroke", color)
-          .style("stroke-opacity", 0.5)
-        .transition()
-          .duration(2000)
-          .ease(Math.sqrt)
-          .attr("r", 20)
-          .style("fill-opacity", 1e-6)
-          .style("stroke-opacity", 1e-6)
-          .remove();
-        setTimeout(ringing, 2000);
-    }
+function ringing() {
+	var color = "red";
+	if (status == 'connected') {
+		color = "green";
+	}
+	var c = payphones['features'][0];
+	console.log("coords: " + c.geometry.coordinates);
+	var pro = projection(c.geometry.coordinates);
+	console.log("projection: " + pro);
+	svg.append("circle")
+		.attr("cx", pro[0])
+		.attr("cy", pro[1])
+		.attr("r", 1)
+		.style("fill", "red")
+		.style("fill-opacity", 0.5)
+		.style("stroke", color)
+		.style("stroke-opacity", 0.5)
+		.transition()
+		.duration(2000)
+		.ease(Math.sqrt)
+		.attr("r", 20)
+		.style("fill-opacity", 1e-6)
+		.style("stroke-opacity", 1e-6)
+		.remove();
+	setTimeout(ringing, 2000);
+}
+//ringing();
 });
+
+function ringing(lat, lon, status) {
+	console.log("lat: " + lat + " lon: " + lon + " status: " + status);
+	var color = "red";
+	if (status == 'connected') {
+		color = "green";
+	}
+	//var c = payphones['features'][0];
+	console.log("coords: " + [lon, lat]);
+	var pro = projection([lon, lat]);
+	console.log("projection: " + pro);
+	svg.append("circle")
+		.attr("cx", pro[0])
+		.attr("cy", pro[1])
+		.attr("r", 1)
+		.style("fill", color)
+		.style("fill-opacity", 0.5)
+		.style("stroke", color)
+		.style("stroke-opacity", 0.5)
+		.transition()
+		.duration(2000)
+		.ease(Math.sqrt)
+		.attr("r", 20)
+		.style("fill-opacity", 1e-6)
+		.style("stroke-opacity", 1e-6)
+		.remove();
+	//setTimeout(ringing, 2000);
+}
 
 var source = new EventSource('/livemap');
 source.addEventListener('message', function(e) {
@@ -83,7 +113,7 @@ source.addEventListener('message', function(e) {
   console.log(e);
   var data = JSON.parse(e.data);
   $.each(data, function(i, phone) {
-    ringing(phone.lat, phone.lon, phone.status);
+    ringing(parseFloat(phone.lat), parseFloat(phone.lon), phone.status);
   })
 
 }, false);

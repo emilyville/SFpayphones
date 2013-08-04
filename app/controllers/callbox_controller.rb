@@ -7,7 +7,11 @@ class CallboxController < ApplicationController
 		number = params[:From]
 		body = params[:Body]
 		logger.debug "Received body #{body}"
-		pay_phones = PayPhone.where(neighborhood: body)
+		if body == 'All'
+			pay_phones = PayPhone.all
+		else
+			pay_phones = PayPhone.where(neighborhood: body)
+		end
 		if pay_phones.empty?
 			no_phones number and return
 		end
@@ -42,7 +46,8 @@ class CallboxController < ApplicationController
 			$redis.multi do
 				pay_phones.each do |payphone|
 					$redis.hset "#{main_call.sid}-outgoing", payphone.number, ""
-					$redis.hset "locations" payphone.number JSON.dump({'lat': payphone.lat, 'lon': payphone.lon})
+					$redis.hset "locations", payphone.number, JSON.dump({'lat' => payphone.lat, 'lon' => payphone.lon})
+					$redis.expire "locations", 180
 
 				end
 			end
@@ -70,6 +75,7 @@ class CallboxController < ApplicationController
 			$redis.hset "#{root_callsid}-outgoing", call.to, call.sid
 			$redis.set "#{call.sid}-root", root_callsid
 			$redis.hsetnx "phonestatus", call.to, "ringing"
+			$redis.expire "phonestatus", 180
 			$redis.publish "callsupdated", JSON.dump({:status => "ringing"})
 		end
 		logger.info "adding caller to queue"
@@ -145,6 +151,7 @@ class CallboxController < ApplicationController
 		hangup_calls all_callsids
 		# change live status
 		$redis.hset "phonestatus", number, "connected"
+		$redis.expire "phonestatus", 180
 		logger.info "connecting to caller"
 		# create the response to connect to the waiting caller
 		response = Twilio::TwiML::Response.new do |r|
