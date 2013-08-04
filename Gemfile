@@ -14,7 +14,7 @@ group :production do
 	gem 'activerecord-jdbcpostgresql-adapter', '1.3.0.beta2'
 end
 
-gem 'jetpack'
+gem "resque", "~> 2.0.0.pre.1", github: "resque/resque"
 gem 'jquery-rails'
 gem 'twilio-ruby'
 gem 'figaro'
