@@ -6,6 +6,7 @@ class BackgroundCaller
 		Resque.logger.info "starting calls"
 		pay_phones.keys.each do |payphone|
 			begin
+				break if $redis.exists "#{root_callsid}-connected"
 				call = $twilio.account.calls.create(
 					:From => '+14155086687',
 					:To => payphone,
