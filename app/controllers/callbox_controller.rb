@@ -61,7 +61,9 @@ class CallboxController < ApplicationController
 	def caller_connected
 		root_callsid = params[:CallSid]
 		logger.info "scheduling background job to create calls"
-		Resque.enqueue(BackgroundCaller, root_callsid)
+		Resque.enqueue(BackgroundCaller, root_callsid,
+			url_for(controller: 'callbox', action: 'call_connected'),
+			url_for(controller: 'callbox', action: 'call_completed'))
 		logger.info "adding caller to queue"
 		# put caller in queue
 		begin

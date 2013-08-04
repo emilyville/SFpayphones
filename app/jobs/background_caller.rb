@@ -1,7 +1,7 @@
 class BackgroundCaller
 	@queue = :make_call
 
-	def self.perform root_callsid
+	def self.perform root_callsid url callback_url
 		pay_phones = $redis.hgetall "#{root_callsid}-outgoing"
 		Resque.logger.info "starting calls"
 		pay_phones.keys.each do |payphone|
@@ -9,8 +9,8 @@ class BackgroundCaller
 				call = $twilio.account.calls.create(
 					:From => '+14155086687',
 					:To => payphone,
-					:Url => url_for(controller: 'callbox', action: 'call_connected'),
-					:StatusCallback => url_for(controller: 'callbox', action: 'call_completed')
+					:Url => url,
+					:StatusCallback => callback_url
 					)
 			rescue Exception => e
 				Resque.logger.info "Unable to initiate call to #{payphone}: #{e.message}"
