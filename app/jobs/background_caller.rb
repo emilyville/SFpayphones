@@ -1,7 +1,7 @@
 class BackgroundCaller
 	@queue = :make_call
 
-	def self.perform root_callsid url callback_url
+	def self.perform root_callsid, url, callback_url
 		pay_phones = $redis.hgetall "#{root_callsid}-outgoing"
 		Resque.logger.info "starting calls"
 		pay_phones.keys.each do |payphone|
