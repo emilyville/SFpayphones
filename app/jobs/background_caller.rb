@@ -1,6 +1,7 @@
 class BackgroundCaller
 	@queue = :make_call
-	def perform root_callsid
+
+	def self.perform root_callsid
 		pay_phones = $redis.hgetall "#{root_callsid}-outgoing"
 		logger.info "starting calls"
 		pay_phones.keys.each do |payphone|
