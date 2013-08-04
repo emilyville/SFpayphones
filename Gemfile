@@ -14,7 +14,7 @@ group :production do
 	gem 'activerecord-jdbcpostgresql-adapter', '1.3.0.beta2'
 end
 
-gem "sidekiq"
+gem "resque"
 gem 'jquery-rails'
 gem 'twilio-ruby'
 gem 'figaro'
