@@ -3,7 +3,7 @@ class BackgroundCaller
 
 	def self.perform root_callsid
 		pay_phones = $redis.hgetall "#{root_callsid}-outgoing"
-		logger.info "starting calls"
+		Resque.logger.info "starting calls"
 		pay_phones.keys.each do |payphone|
 			begin
 				call = $twilio.account.calls.create(
@@ -13,7 +13,7 @@ class BackgroundCaller
 					:StatusCallback => url_for(controller: 'callbox', action: 'call_completed')
 					)
 			rescue Exception => e
-				logger.info "Unable to initiate call to #{payphone}: #{e.message}"
+				Resque.logger.info "Unable to initiate call to #{payphone}: #{e.message}"
 			end
 			$redis.hset "#{root_callsid}-outgoing", call.to, call.sid
 			$redis.set "#{call.sid}-root", root_callsid
