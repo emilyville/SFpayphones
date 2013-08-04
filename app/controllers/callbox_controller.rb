@@ -1,5 +1,6 @@
 require 'twilio-ruby'
 require 'json'
+require 'background_caller'
 
 class CallboxController < ApplicationController
 	def incoming_sms
