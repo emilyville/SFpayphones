@@ -13,6 +13,4 @@ class BackgroundCallKiller
 			end
 		end
 	end
-		end
-	end
 end
