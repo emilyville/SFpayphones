@@ -1,6 +1,8 @@
 require 'twilio-ruby'
 require 'json'
 require 'background_caller'
+require 'background_call_killer'
+
 
 class CallboxController < ApplicationController
 	def incoming_sms
@@ -80,24 +82,11 @@ class CallboxController < ApplicationController
 		render :xml => response.text
 	end
 
-	def hangup_calls call_sids
-		call_sids.each do |sid|
-			begin
-				call = $twilio.account.calls.get(sid)
-				call.hangup
-				# delete the key for this call
-				$redis.del "#{sid}-root"
-			rescue Exception => e
-				logger.debug "Encoutered error hanging up call #{sid}: #{e.message}"
-			end
-		end
-	end
-
 	def caller_completed
 		call_sid = params[:CallSid]
 		#hangup all the calls
 		all_calls = $redis.hgetall "#{call_sid}-outgoing"
-		hangup_calls all_calls.values
+		Resque.enqueue(BackgroundCallKiller, all_calls.values)
 		#lookup the queue sid
 		queue_sid = $redis.get "#{call_sid}-queue"
 		begin
@@ -134,7 +123,7 @@ class CallboxController < ApplicationController
 		logger.info "hanging up other calls"
 		all_callsids = $redis.hgetall("#{root_callsid}-outgoing").values
 		all_callsids.delete call_sid
-		hangup_calls all_callsids
+		Resque.enqueue(BackgroundCallKiller, all_callsids)
 		# change live status
 		$redis.hset "phonestatus", number, "connected"
 		$redis.expire "phonestatus", 180
