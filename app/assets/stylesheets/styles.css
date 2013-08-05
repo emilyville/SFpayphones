@@ -3,14 +3,23 @@ body {
 	color: #616161;
 }
 
+#allthethings {
+	max-width: 1300px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 p, ol, ul, td {
 	font-size: 12px;	
 }
+
+a {
+	color: red;
+}
+
 #map {
 	z-index: 0;
 }
-
-
 
 a:hover {
 	color: #ffffff;
@@ -50,17 +59,11 @@ li.active {
 	margin-left: 60px;
 
 }
-.nav>li>a:hover, .nav>li>a:focus {
-	background-color: #CAEAE9;
-}	
-li.active {
-	background-color: #99CCCC;
-}
 
 .mapd3 {
 	position: absolute;
 	top: 0px;
 	bottom: 0px; 
-	right: -60px;
+	right: -80px;
 /*	background: url('map-bg.png');
 */}
