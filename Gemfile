@@ -24,7 +24,6 @@ gem 'google-webfonts'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
-gem 'puma'
 gem 'redis'
 gem 'foreman'
 #static assets on heroku
