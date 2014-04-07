@@ -7,7 +7,7 @@ lives at sfpayphones.urbansmore.com
 
 This app calls an outdated (~2007) dataset of payphones in San Francisco by neighborhood, and connects the call to the first one that answers. The goal was to create a verified and correct map and dataset of payphones in San Francisco.
 
-It uses: 
+It uses...
 --------------------
 -A public google spreadsheet for the pay phone locations and numbers:
 https://docs.google.com/a/emilyville.com/spreadsheet/pub?key=0AhXimdB90zwNdFk1dmlzbjNSclVkUmliQU4wU2hyOHc&output=html
@@ -17,6 +17,7 @@ https://docs.google.com/a/emilyville.com/spreadsheet/pub?key=0AhXimdB90zwNdFk1dm
 -Ruby on Rails 
 
 -Twilio
+
 
 How it works 
 --------------------
