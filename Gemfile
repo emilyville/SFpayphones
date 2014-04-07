@@ -6,12 +6,14 @@ gem 'rails', '4.0.0'
 # heroku id is shielded-coast-8367.git
 
 group :development, :test do
-	gem 'jdbc-sqlite3'
-	gem 'activerecord-jdbcsqlite3-adapter', '1.3.0.beta2'
+	gem 'sqlite3'
+	#gem 'jdbc-sqlite3'
+	#gem 'activerecord-jdbcsqlite3-adapter', '1.3.0.beta2'
 end
 group :production do
-	gem 'jdbc-postgres'
-	gem 'activerecord-jdbcpostgresql-adapter', '1.3.0.beta2'
+	gem 'pg'
+	#gem 'jdbc-postgres'
+	#gem 'activerecord-jdbcpostgresql-adapter', '1.3.0.beta2'
 end
 
 gem "resque"
@@ -22,7 +24,6 @@ gem 'google-webfonts'
 gem 'sass-rails'
 gem 'coffee-rails'
 gem 'uglifier'
-gem 'puma'
 gem 'redis'
 gem 'foreman'
 #static assets on heroku
