@@ -14,14 +14,21 @@ https://docs.google.com/a/emilyville.com/spreadsheet/pub?key=0AhXimdB90zwNdFk1dm
 
 -D3 to vizualize which ones are ringing 
 
+![My image](images/payphones-calling.png)
+
 -Ruby on Rails 
 
 -Twilio
 
 
-How it works 
+It looks like this
 --------------------
-Text the name of the neighborhood to 415-508-6687 to be connected with all the payphones in that neighborhood. 
+![My image](images/payphones-main.png)
+
+
+How to using the app  
+--------------------
+Text the name of the neighborhood to 415-508-6687 to be connected with all the payphones in that neighborhood. It sometimes crashes - that's a lot of phone calls. If so, just ping me. 
 
 Bayview,
 Bernal Hill,
@@ -56,5 +63,6 @@ Tenderloin,
 Twin Peaks,
 Visitacion Valley,
 West of Twin Peaks,
-Western Addition,
+Western Addition
+
 
