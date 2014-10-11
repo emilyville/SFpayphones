@@ -26,9 +26,9 @@ It looks like this
 ![My image](images/payphones-main.png)
 
 
-How to using the app  
+How to use this app  
 --------------------
-Text the name of the neighborhood to 415-508-6687 to be connected with all the payphones in that neighborhood. It sometimes crashes - that's a lot of phone calls. If so, just ping me. 
+Text the name of the neighborhood to the chosen number to be connected with all the payphones in that neighborhood. It sometimes crashes - that's a lot of phone calls. If so, just ping me. 
 
 Bayview,
 Bernal Hill,
